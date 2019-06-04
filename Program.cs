@@ -180,7 +180,8 @@ namespace linq
             BankName = bank.Name
         }).ToList();
 
-        foreach (var item in millionaireReport)
+
+        foreach (var item in millionaireReport.OrderBy(c => c.GetLastName()))
         {
             Console.WriteLine($"{item.CustomerName} at {item.BankName}");
         }
